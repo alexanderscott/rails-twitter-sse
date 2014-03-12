@@ -1,6 +1,5 @@
 # TwitterSocketStreaming
-An exercise in Rails 4 streams, SSEs, threads, Twitter Streaming API, and Redis Pub/Sub.
-[http://twitter-stream-sse.ehrns.com/](http://twitter-stream-sse.ehrns.com/)
+An exercise in Rails 4 streams + threads, SSEs, Twitter Streaming API, and Redis Pub/Sub.
 
 
 # About
@@ -24,7 +23,7 @@ To run if your RAILS_ENV is set to development:
   
      $ bundle install
      # rake rails:update:bin
-     $ rails s
+     $ rails s -p 3000
 
 
 Visit http://localhost:3000 in your browser.
@@ -37,6 +36,7 @@ If your RAILS_ENV=production, you may first need to precompile the assets with:
 
 
 # TODO
+* Global thread manager
 * Write tests
 
 # LICENSE
