@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="page-header row">
+    <h1 class="font-personal col-md-6 title"><%= current_user[:name] %> <small>@<%= current_user[:nickname] %></small></h1>
+    <a class="btn btn-danger pull-right" href="/signout">Sign Out</a>
+  </div>
+
+  <div class="tweet-form-container row" style="margin-bottom:40px;">
+    <form action="/tweets/create" role="form" method="post">
+      <fieldset>
+        <textarea id="tweet-textarea" class="form-control col-md-8" rows="3" name="tweet_text" style="width:90%;"></textarea>
+        <button id="tweet-post-btn" type="button" class="btn btn-primary pull-right btn-lg" style="margin-top:10px;">Tweet</button>
+      </fieldset>
+    </form>
+  </div>
+
+  <div class="container tweet-container">
+    <ul id="tweet-list" class="tweet-list">
+      <% @tweets.each do |tweet| %>
+        <%= render :partial => "tweets/tweet", :locals => { :tweet => tweet } %>
+      <% end %>
+      <!-- tweets rendered here as list elements !-->
+    </ul>
+  </div>
+
+</div>
+

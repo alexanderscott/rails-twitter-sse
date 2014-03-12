@@ -1,0 +1,13 @@
+<div class="tweet media">
+  <a class="pull-left" href="https://twitter.com/<%= @tweet.user_nickname %>">
+    <img class="media-object img-round" src="<%= @tweet.user_image %>">
+  </a>
+  <div class="media-body">
+
+    <p><%=h @tweet.text %></p>
+
+    <p class="text-right text-muted" data-timestamp="<%= @tweet.created_at %>"></p>
+
+  </div>
+
+</div>

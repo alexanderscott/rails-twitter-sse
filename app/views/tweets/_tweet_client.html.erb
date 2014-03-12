@@ -1,0 +1,11 @@
+<div class="tweet media" style="margin: 10px 0 10px">
+  <a class="pull-left" href="https://twitter.com/<%= tweet.user_nickname %>">
+    <img class="media-object img-circle" src="<%= tweet.user_image %>">
+  </a>
+  <div class="media-body">
+    <p class="text-tweet" style="margin:1px 0 4px;"><%- tweet.text %></p>
+
+    <div class="text-gray text-timeago" data-timestamp="<%= tweet.created_at %>"><%= tweet.timeago %></div>
+
+  </div>
+</div>

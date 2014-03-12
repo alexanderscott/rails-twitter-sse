@@ -1,0 +1,12 @@
+<div class="tweet media" style="margin: 10px 0 10px">
+  <a class="pull-left" href="https://twitter.com/<%= tweet.user_nickname %>">
+    <img class="media-object img-circle" src="<%= tweet.user_image %>">
+  </a>
+  <div class="media-body">
+    <p class="text-tweet" style="margin:1px 0 4px;"><%=h tweet.text %></p>
+
+    <%# Regex replace UTC with Z so the timestamp string works in all browsers %>
+    <div class="text-gray text-timeago" data-timestamp="<%= tweet.created_at.to_s.gsub(/UTC/, 'Z') %>"></div>
+
+  </div>
+</div>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TwitterSocketStreaming</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <%# render "partials/navbar" %>
+
+  <%# Load async external libs %>
+  <script>
+      window.twitter_consumer_key = "<%= ENV['TWITTER_CONSUMER_KEY'] %>";
+
+      window.twttr = (function (d,s,id) {
+        var t, js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return; js=d.createElement(s); js.id=id;
+        js.src="https://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs);
+        return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
+      }(document, "script", "twitter-wjs"));
+
+      //Google Analytics async load -->
+      var _gaq=[['_setAccount',"<%= ENV['GOOGLE_ANALYTICS_TRACKING_CODE'] %>"],['_trackPageview']];
+      (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+      g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+      s.parentNode.insertBefore(g,s)}(document,'script'));
+
+  </script>
+
+  <%= yield %>
+  
+  <%= render "partials/footer" %>
+
+</body>
+</html>
