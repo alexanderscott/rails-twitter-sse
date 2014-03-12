@@ -22,6 +22,7 @@ To run if your RAILS_ENV is set to development:
 
   
      $ bundle install
+     # rake rails:update:bin
      $ rails s
 
 
