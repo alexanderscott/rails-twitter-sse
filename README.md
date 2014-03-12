@@ -1,5 +1,5 @@
 # TwitterSocketStreaming
-An exercise in Rails 4 ActiveRecord::Live streams, SSEs, threads, Twitter Streaming API, and Redis Pub/Sub.
+An exercise in Rails 4 streams, SSEs, threads, Twitter Streaming API, and Redis Pub/Sub.
 
 
 # About
