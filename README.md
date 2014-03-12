@@ -1,12 +1,13 @@
 # TwitterSocketStreaming
 An exercise in Rails 4 streams, SSEs, threads, Twitter Streaming API, and Redis Pub/Sub.
+[http://twitter-stream-sse.ehrns.com/](http://twitter-stream-sse.ehrns.com/)
 
 
 # About
 * A Twitter Streaming API worker runs in a separate thread and publishes JSON serialized tweets via Redis.  
 * When a new user logs in via Twitter OAuth, this Streaming thread adds their ID to the following pool and restarts. 
 * A logged in client may make a connection using the browser's EventSource class to Server-Sent Events sent by the app server.
-* A Redis pub-sub messaging broker mediates the communication between the server-side streaming worker/publisher and the client.  
+* A Redis pub-sub messaging broker mediates the communication between the server-side streaming worker/publisher and the app server (which in turn emits to the client).  
 * Basic user data is stored in Redis hashes and z-sets.  Tweets are not stored, but simply pass thru.
 
 
